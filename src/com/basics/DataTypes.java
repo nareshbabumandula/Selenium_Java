@@ -23,6 +23,11 @@ public class DataTypes {
 		
 		System.out.println("Minimum value of a short container is  : " + Short.MIN_VALUE);
 		System.out.println("Max value of a short container is  : " + Short.MAX_VALUE);
+
+		// Non primitives data types
+		String sText = "hello world this is core java";
+		System.out.println(sText);
+		
 	}
 
 }
