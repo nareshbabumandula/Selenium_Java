@@ -10,7 +10,7 @@ public class ClassB extends ClassA{
 		System.out.println("Subtraction of a and b is : " +c);
 	}
 	
-	public void multiplicaion() {
+	public void multiplication() {
 		int c=a*b;
 		System.out.println("Multiplicaion of a and b is : " +c);
 	}
@@ -20,7 +20,7 @@ public class ClassB extends ClassA{
 		// Create an object reference for ClassB
 		ClassB cb = new ClassB();
 		cb.subtraction();
-		cb.multiplicaion();
+		cb.multiplication();
 		System.out.println(cb.a);
 		System.out.println(cb.b);
 		cb.addition();
