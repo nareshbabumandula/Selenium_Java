@@ -17,7 +17,7 @@ public class ClassC extends ClassB{
 		ClassC cc = new ClassC();
 		cc.addition();
 		cc.subtraction();
-		cc.multiplicaion();
+		cc.multiplication();
 		cc.division();
 		System.out.println(cc.a);
 		System.out.println(cc.b);
