@@ -1,5 +1,6 @@
 package com.webdriver.scripts;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -38,9 +39,10 @@ public class BrowserTest {
 		}
 		driver.manage().window().maximize(); // Maximize the browser window
 		driver.get(Url);
+		//driver.findElement(By.id("user")).sendKeys("bala123");
 		System.out.println(driver.getTitle());
 		System.out.println(driver.getCurrentUrl());
-		driver.quit(); // Terminate the browser
+		//driver.quit(); // Terminate the browser
 	}
 
 
