@@ -8,6 +8,19 @@ public class UncheckedExceptionTest {
 		boolean bFlag = false;
 		
 		try {
+			//String sText = null;
+			//System.out.println(sText.length()); // NullPointerException
+			
+			String asText = "123";
+			//int x = Integer.parseInt(asText);
+			//System.out.println(x);
+			
+			double d = Double.parseDouble(asText);
+			System.out.println(d);
+			
+			int arr[] = new int[4];
+			arr[5]=100;
+			
 			int marks[] = {12,45,45,70,60,90};
 			System.out.println(marks[0]);
 			System.out.println(marks[1]);
@@ -27,6 +40,7 @@ public class UncheckedExceptionTest {
 		}catch(Exception e) {
 			System.out.println("Executing catch block of Exception..!");
 			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 		
 		

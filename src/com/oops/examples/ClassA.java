@@ -36,6 +36,8 @@ public class ClassA {
 		System.out.println(obj.a);
 		System.out.println(obj.b);
 		System.out.println(obj.toString());
+	
+		
 	}
 
 }
