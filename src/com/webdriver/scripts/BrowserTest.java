@@ -1,13 +1,15 @@
 package com.webdriver.scripts;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.PageFactory;
 
-public class BrowserTest {
+import com.object.repository.Homepage;
+
+public class BrowserTest extends Homepage{
 
 	WebDriver driver;
 
@@ -39,10 +41,15 @@ public class BrowserTest {
 		}
 		driver.manage().window().maximize(); // Maximize the browser window
 		driver.get(Url);
-		//driver.findElement(By.id("user")).sendKeys("bala123");
+		//driver.findElement(By.id("user")).sendKeys("bala123"); // without POM
+		//driver.findElement(userName).sendKeys("naresh223"); // with POM
+		Homepage pf = new PageFactory().initElements(driver, Homepage.class);
+		pf.verifyLogin();
+		//verifyLogin(); // Login method call
 		System.out.println(driver.getTitle());
 		System.out.println(driver.getCurrentUrl());
-		//driver.quit(); // Terminate the browser
+		driver.quit(); // Terminate the browser
+		
 	}
 
 
