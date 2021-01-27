@@ -9,16 +9,24 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.object.repository.Homepage;
 
+
 public class BrowserTest extends Homepage{
 
 	WebDriver driver;
-
+	/**
+	 * @author admin
+	 * @Description This method is used to launch browser and access URL
+	 * @throws NA
+	 * @Input Paramters Browser and URL
+	 * @param Browser
+	 * @param Url
+	 */
 	public void launchBrowser(String Browser, String Url) {
 
 		switch (Browser.toLowerCase().trim()) {
 		case "chrome": {
 			System.setProperty("webdriver.chrome.driver", ".\\browsers\\chromedriver.exe");
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(); //
 			break;
 		}
 		case "ie": {
@@ -41,13 +49,9 @@ public class BrowserTest extends Homepage{
 		}
 		driver.manage().window().maximize(); // Maximize the browser window
 		driver.get(Url);
-		//driver.findElement(By.id("user")).sendKeys("bala123"); // without POM
-		//driver.findElement(userName).sendKeys("naresh223"); // with POM
-		Homepage pf = new PageFactory().initElements(driver, Homepage.class);
-		pf.verifyLogin();
-		//verifyLogin(); // Login method call
 		System.out.println(driver.getTitle());
 		System.out.println(driver.getCurrentUrl());
+		System.out.println(driver.getWindowHandle()); // Browser session ID
 		driver.quit(); // Terminate the browser
 		
 	}

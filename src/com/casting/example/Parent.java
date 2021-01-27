@@ -7,6 +7,10 @@ public class Parent {
 	void Demo() {
 		System.out.println("Demo method from parent class");
 	}
+	
+	void Test() {
+		System.out.println("Test method from parent class");
+	}
 
 	
 }
