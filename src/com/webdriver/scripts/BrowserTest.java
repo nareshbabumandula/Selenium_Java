@@ -65,9 +65,7 @@ public class BrowserTest extends Homepage{
 		Thread.sleep(2000);
 		driver.navigate().refresh(); // Refresh the browser
 		
-
 		driver.quit(); // Terminate the browser
-		
 	}
 
 
