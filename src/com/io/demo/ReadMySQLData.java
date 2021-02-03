@@ -9,8 +9,8 @@ public class ReadMySQLData {
 
 	public static void main(String[] args) {
 		try{  
-			Class.forName("com.mysql.jdbc.Driver");  
-			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/demo","root","Secure*1234");  
+			Class.forName("com.mysql.cj.jdbc.Driver");  
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/demo","root","root");  
 			Statement stmt=con.createStatement();  
 			ResultSet rs=stmt.executeQuery("select * from Employee");  
 			while(rs.next())  

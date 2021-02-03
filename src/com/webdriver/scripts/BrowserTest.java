@@ -1,8 +1,13 @@
 package com.webdriver.scripts;
 
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -64,6 +69,12 @@ public class BrowserTest extends Homepage{
 		driver.navigate().forward(); // Navigate the browser forward
 		Thread.sleep(2000);
 		driver.navigate().refresh(); // Refresh the browser
+		
+		List<WebElement> links = driver.findElements(By.tagName("a"));
+		for (int i = 0; i < links.size(); i++) {
+			System.out.println(links.get(i).getText());
+		}
+		
 		
 		driver.quit(); // Terminate the browser
 	}

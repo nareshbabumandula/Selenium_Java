@@ -17,7 +17,12 @@ public class ArrayListTest {
 		list.add("Bala");
 		list.add("Ramesh");
 		list.add("Manohar");
-		
+		list.add("Shilpa");
+		list.add("Naresh");
+		list.add(null);
+		list.add("");
+				
+		System.out.println("No of elements are : " + list.size());	
 		System.out.println(list.get(0));
 		list.remove(1);
 		list.add("Rajesh Sharma");
