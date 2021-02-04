@@ -19,8 +19,8 @@ public class ArrayListTest {
 		list.add("Manohar");
 		list.add("Shilpa");
 		list.add("Naresh");
-		list.add(null);
-		list.add("");
+		//list.add(null);
+		//list.add("");
 				
 		System.out.println("No of elements are : " + list.size());	
 		System.out.println(list.get(0));
@@ -31,12 +31,24 @@ public class ArrayListTest {
 		ArrayList<String> list1 = new ArrayList<String>();
 		list1.add("Kiran");
 		list1.add("Anjali");
+		list1.add("Ramesh");
 		
 		System.out.println(list.isEmpty());
 		//System.out.println(list.removeAll(list));
 		System.out.println(list.lastIndexOf(list));
-		System.out.println(list.addAll(list1));
-			
+		//System.out.println(list.addAll(list1));
+	
+		System.out.println("List elements are : " + list);
+		System.out.println("List1 elements are : " + list1);
+		// Apply retainAll method
+		list1.retainAll(list);
+		System.out.println("After applying retail all method");
+		System.out.println("List elements are : " + list);
+		System.out.println("List1 elements are : " + list1);
+		
+		
+		
+		System.out.println("Iteration Starts.....");
 		// Iterate and traverse through Iterator
 		Iterator iter = list.iterator();
 		while(iter.hasNext()) {
