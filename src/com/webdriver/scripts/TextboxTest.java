@@ -7,10 +7,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class TextboxTest {
 	
@@ -31,6 +33,7 @@ public class TextboxTest {
 		WebElement username = driver.findElement(By.id("user"));
 		
 		System.out.println("Name attribute value is : " + username.getAttribute("name"));
+		System.out.println(username.getTagName());
 		System.out.println(username.getAttribute("class"));
 		System.out.println(username.getAttribute("id"));
 		System.out.println(username.getAttribute("type"));
@@ -42,6 +45,19 @@ public class TextboxTest {
 		Thread.sleep(2000);
 		username.clear();
 		username.sendKeys("nishanth");
+		System.out.println(username.getAttribute("value"));
+		String actValue = username.getAttribute("value");
+		/*
+		 * if (actValue.equals("nishanth")) {
+		 * Reporter.log("Expected value is matching with the actual value : " +
+		 * actValue); } else {
+		 * Reporter.log("Expected value is not matching with the actual value : " +
+		 * actValue); }
+		 */
+		SoftAssert softAssertion= new SoftAssert();
+		System.out.println("softAssert Method Was Started");
+		softAssertion.assertEquals(true, false);
+		Assert.assertEquals(actValue, "Nishanth", "Failed to enter the data in Username text field");
 		Thread.sleep(2000);
 		username.sendKeys(Keys.BACK_SPACE);
 		Reporter.log("Successfully entered data in textbox");
