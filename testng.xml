@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Automation Execution Results" verbose="1" >
+  <listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test thread-count="5" name="MyContactForm">
+    <classes>
+      <class name="com.webdriver.scripts.ButtonTest"/>
+      <class name="com.demo.scripts.ImageTest"/>
+    </classes>
+  </test> <!-- testNG -->
+</suite> <!-- Suite -->

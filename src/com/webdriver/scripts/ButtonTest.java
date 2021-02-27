@@ -41,8 +41,14 @@ public class ButtonTest {
 
 		System.out.println(login.isDisplayed());
 		System.out.println(login.isEnabled());
+		Assert.assertEquals(login.isEnabled(), true); // TestNG Assertion
 		login.click();
 		Reporter.log("Successfully clicked on a button");
+	}
+	
+	@Test
+	public void Demo() {
+		System.out.println("Dummy method");
 	}
 
 	@AfterClass //@AfterClass: The annotated method will be run after all the test methods in the current class have been run.
