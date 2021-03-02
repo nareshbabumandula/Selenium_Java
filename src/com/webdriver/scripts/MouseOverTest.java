@@ -18,7 +18,7 @@ public class MouseOverTest {
 	WebDriver driver;
 
 	@Test
-	public void imageMethods() throws InterruptedException {
+	public void ActionMethods() throws InterruptedException {
 		
 		WebElement addons = driver.findElement(By.id("highlight-addons"));
 		
