@@ -18,7 +18,7 @@ public class TextboxTest {
 	
 	WebDriver driver;
 
-	@BeforeClass //@BeforeClass: The annotated method will be run before the first test method in the current class is invoked.
+	@BeforeClass() //@BeforeClass: The annotated method will be run before the first test method in the current class is invoked.
 	public void LaunchBrowser() {
 		System.setProperty("webdriver.chrome.driver", ".\\browsers\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -57,7 +57,7 @@ public class TextboxTest {
 		SoftAssert softAssertion= new SoftAssert();
 		System.out.println("softAssert Method Was Started");
 		softAssertion.assertEquals(true, false);
-		Assert.assertEquals(actValue, "Nishanth", "Failed to enter the data in Username text field");
+		Assert.assertEquals(actValue, "nishanth", "Failed to enter the data in Username text field");
 		Thread.sleep(2000);
 		username.sendKeys(Keys.BACK_SPACE);
 		Reporter.log("Successfully entered data in textbox");
