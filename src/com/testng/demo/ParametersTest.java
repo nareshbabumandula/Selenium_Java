@@ -1,4 +1,4 @@
-package com.webdriver.scripts;
+package com.testng.demo;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,10 +11,12 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class TextboxTest {
+public class ParametersTest {
 	
 	WebDriver driver;
 
@@ -28,7 +30,8 @@ public class TextboxTest {
 	}
 	
 	@Test
-	public void textBoxMethods() throws InterruptedException {
+	@Parameters({"USER"})
+	public void textBoxMethods(@Optional("Naresh") String USER) throws InterruptedException {
 		
 		
 		
@@ -43,7 +46,7 @@ public class TextboxTest {
 		System.out.println(username.isDisplayed());
 		System.out.println(username.isEnabled());
 		
-		username.sendKeys("rajesh"); // Hard coding
+		username.sendKeys(USER); // Hard coding
 		Thread.sleep(2000);
 		username.clear();
 		username.sendKeys("nishanth");

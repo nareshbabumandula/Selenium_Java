@@ -31,7 +31,7 @@ public class ButtonTest {
 	public void buttonMethods() throws InterruptedException {
 
 		WebElement login = driver.findElement(By.name("btnSubmit"));
-
+		
 		System.out.println(login.getTagName());
 		System.out.println(login.getAttribute("class"));
 		System.out.println(login.getAttribute("type"));
