@@ -1,6 +1,9 @@
 package com.webdriver.scripts;
 
+import java.time.Duration;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -8,6 +11,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -16,7 +21,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class TextboxTest {
+public class WaitMethodsInSelenium {
 	
 	WebDriver driver;
 
@@ -24,19 +29,34 @@ public class TextboxTest {
 	public void LaunchBrowser() {
 		System.setProperty("webdriver.chrome.driver", ".\\browsers\\chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.get("https://www.mycontactform.com/");
+		driver.get("https://www.blazedemo.com/");
 		driver.manage().window().maximize();
+		// Implicit wait
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
 	@Test
 	public void textBoxMethods() throws InterruptedException {
 		
-		
+		// Explicit Wait
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("user")));
-		WebElement username = driver.findElement(By.id("user"));
 		
+		
+		// Fluent wait
+		Wait nWait = new FluentWait(driver)
+				.withTimeout(Duration.ofSeconds(20))
+				.pollingEvery(Duration.ofSeconds(2))
+				.ignoring(NoSuchElementException.class);
+
+		WebElement userID = (WebElement) nWait.until(new Function<WebDriver, WebElement>(){
+				public WebElement apply(WebDriver driver) {
+					System.out.println("Waiting for the UserID textbox..!");
+					return driver.findElement(By.id("user"));
+				}
+			});
+		
+		WebElement username = driver.findElement(By.id("user"));
 		System.out.println("Name attribute value is : " + username.getAttribute("name"));
 		System.out.println(username.getTagName());
 		System.out.println(username.getAttribute("class"));

@@ -1,18 +1,15 @@
 package com.webdriver.scripts;
 
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
-
+import java.util.concurrent.TimeUnit;
+import javax.print.attribute.standard.MediaSize.NA;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.PageFactory;
 
 import com.object.repository.Homepage;
 
@@ -57,6 +54,8 @@ public class BrowserTest extends Homepage{
 		}
 		driver.manage().window().maximize(); // Maximize the browser window
 		driver.get(Url);
+		// Implicit wait
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		System.out.println(driver.getTitle());
 		System.out.println(driver.getCurrentUrl());
 		System.out.println(driver.getWindowHandle()); // Browser session ID
@@ -84,7 +83,7 @@ public class BrowserTest extends Homepage{
 	public static void main(String[] args) throws InterruptedException {
 
 		BrowserTest bt = new BrowserTest();
-		bt.launchBrowser("chrome", "https://www.mycontactform.com/");
+		bt.launchBrowser("edge", "https://www.mycontactform.com/");
 	}
 
 }
