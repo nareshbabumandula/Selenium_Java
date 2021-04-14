@@ -51,7 +51,7 @@ public class DragandDropTest {
 		
 	
 		Action seriesofActions;
-		seriesofActions = builder.sendKeys(tags, "Selenium").sendKeys(Keys.BACK_SPACE).sendKeys("Training").build();
+		seriesofActions = builder.sendKeys(tags, "Selenium").sendKeys(Keys.SPACE).sendKeys("Training").build();
 		seriesofActions.perform();
 		Thread.sleep(2000);
 		
