@@ -38,7 +38,7 @@ public class DataTypes {
 				short s2=130;
 				byte b2=(byte)s2; // Explicit type casting or narrowing
 				System.out.println(s2 + " " +b2);
-				
+						
 				// String is a pre-defined class in Java
 				String sText="welcome to java software edition";
 				String[] arrWords = sText.split(" ");
