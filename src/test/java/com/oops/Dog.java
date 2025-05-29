@@ -16,15 +16,18 @@ public class Dog extends Pet {
 	public void bite() {
 		System.out.println(name + " can bite..!");
 	}
-
+	
+	// parameterized constructor
+	public Dog(String name, String color) {
+		this.name=name;
+		this.color=color;
+	}
+		
 	public static void main(String[] args) {
 		// Classname objReferenceName = new Constructor();
-		Dog d = new Dog();
-		d.name="Pillu";
+		Dog d = new Dog("Pillu", "White");
 		d.bark();
 		d.bite();
-		d.walk(d.name);
-		d.run(d.name);
 	}
 
 }
