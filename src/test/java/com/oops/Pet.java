@@ -1,6 +1,7 @@
 package com.oops;
 
-public class Pet {
+public class Pet extends Animal{
+	
 	String breed;
 	
 	public void walk(String name) {
