@@ -1,6 +1,6 @@
 package com.oops;
 
-public class Pet {
+public class Pet extends Animal{
 	
 	String breed;
 	

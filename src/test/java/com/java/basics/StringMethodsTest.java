@@ -12,7 +12,5 @@ public class StringMethodsTest {
 		System.out.println(str + " " + sText);
 		System.out.println(str.toUpperCase() + " " +sText.toUpperCase());
 		System.out.println(str.toUpperCase().concat(" ").concat(sText.toUpperCase()));
-		
 	}
-
 }
