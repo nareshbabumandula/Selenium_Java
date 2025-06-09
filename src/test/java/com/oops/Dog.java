@@ -23,6 +23,7 @@ public class Dog extends Pet {
 		System.out.println(name + " is barking..!");
 	}
 	
+	// concrete java method
 	public void bite() {
 		System.out.println(name + " can bite..!");
 	}
