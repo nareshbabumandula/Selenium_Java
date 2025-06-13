@@ -34,6 +34,8 @@ public class MethodOverridingTest extends MethodOverloadTest{
 	public static void main(String[] args) {
 		MethodOverridingTest mot = new MethodOverridingTest();
 		mot.addition();
+		System.out.println(mot.a);
+		System.out.println(mot.b);
 		mot.m1();
 		subtraction(90, 20);
 	}
