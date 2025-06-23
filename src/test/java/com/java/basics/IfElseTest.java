@@ -15,7 +15,7 @@ public class IfElseTest {
 			// if block
 			System.out.println("a is greater than b");
 		} else if(a==b) {
-			// else if block
+			// else-if block
 			System.out.println("a is equal to b");
 		} else {
 			// else block
