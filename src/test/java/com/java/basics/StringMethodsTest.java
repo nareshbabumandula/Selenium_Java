@@ -43,6 +43,5 @@ public class StringMethodsTest {
 			System.out.println(word);
 		}
 		System.out.println(strText.join("|", arrText));
-		
 	}
 }
