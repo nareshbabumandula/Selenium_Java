@@ -3,13 +3,14 @@ package com.selenium.scripts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserTest {
 
 	WebDriver driver;
 
 	void accessSite() {
-		driver = new ChromeDriver();
 		driver.get("https://www.mycontactform.com");
 		String strBrowserTitle = driver.getTitle();
 		System.out.println(strBrowserTitle);
@@ -19,6 +20,24 @@ public class BrowserTest {
 			System.out.println("MyContactForm page title is correct");
 		}else {
 			System.out.println("MyContactForm page title is incorrect");
+		}
+	}
+	
+	void launhBrowser(String browserName) {
+		
+		switch (browserName.toLowerCase().trim()) {
+		case "firefox":
+			driver = new FirefoxDriver();
+			break;
+		case "chrome":
+			driver = new ChromeDriver();
+			break;
+		case "edge":
+			driver = new EdgeDriver();
+			break;
+		default:
+			System.out.println("Invalid browser..!");
+			break;
 		}
 	}
 	
@@ -36,6 +55,7 @@ public class BrowserTest {
 	public static void main(String[] args) throws InterruptedException {
 		// Classname objReferenceName = new Constructor();
 		BrowserTest bt = new BrowserTest();
+		bt.launhBrowser("firefox");
 		bt.accessSite();
 		bt.login();
 	}
