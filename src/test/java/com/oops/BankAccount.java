@@ -26,6 +26,5 @@ public abstract class BankAccount {
 	public static void dematAccount() {
 		System.out.println("Demat account facility");
 	}
-
-
+	
 }
