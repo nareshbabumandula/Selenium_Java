@@ -23,7 +23,7 @@ public class BrowserTest {
 		}
 	}
 	
-	void launhBrowser(String browserName) {
+	void launchBrowser(String browserName) {
 		
 		switch (browserName.toLowerCase().trim()) {
 		case "firefox":
@@ -55,7 +55,7 @@ public class BrowserTest {
 	public static void main(String[] args) throws InterruptedException {
 		// Classname objReferenceName = new Constructor();
 		BrowserTest bt = new BrowserTest();
-		bt.launhBrowser("firefox");
+		bt.launchBrowser("firefox");
 		bt.accessSite();
 		bt.login();
 	}
