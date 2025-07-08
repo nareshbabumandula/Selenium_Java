@@ -14,7 +14,8 @@ public class BrowserTest {
 		driver.get("https://www.mycontactform.com");
 		String strBrowserTitle = driver.getTitle();
 		System.out.println(strBrowserTitle);
-
+		System.out.println(driver.getCurrentUrl());
+		
 		// Checkpoint or verification
 		if(strBrowserTitle.contains("Free Contact and Email Forms")) {
 			System.out.println("MyContactForm page title is correct");
