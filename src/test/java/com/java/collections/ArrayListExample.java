@@ -50,6 +50,5 @@ public class ArrayListExample {
 		alist.addAll(list1);
 		System.out.println(alist);
 		
-		
 	}
 }
