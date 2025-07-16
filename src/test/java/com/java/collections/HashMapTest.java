@@ -25,7 +25,10 @@ public class HashMapTest {
         map.put(null, "UI Path");
         map.put(8, null); // Accepts multiple null values
         map.put(9, null);
-
+        map.put(null, "Playwright");
+        map.put(null, "Postman"); // this will override Playwright
+        map.put(10, null);
+        map.put(11, null);
 
         System.out.println(map.isEmpty());
         System.out.println(map.size());
@@ -36,17 +39,17 @@ public class HashMapTest {
 
         Iterator<String> iter = map.values().iterator();
         while(iter.hasNext()){
-            System.out.println(iter.next());
+            System.out.println("Value is: " + iter.next());
         }
 
         Iterator<Integer> iter1 = map.keySet().iterator();
         while(iter1.hasNext()){
-            System.out.println(iter1.next());
+            System.out.println("Key is: " + iter1.next());
         }
 
         HashMap<Integer, String> map1 = new HashMap<Integer, String>();
-        map1.put(10, "Sikuli");
-        map1.put(11, "Winium");
+        map1.put(12, "Sikuli");
+        map1.put(13, "Winium");
         map.putAll(map1); // Merging 2 map objects
 
         // Iterating through a hashmap using enhanced for loop
