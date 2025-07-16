@@ -8,7 +8,7 @@ public class EachCharacterOccurance {
 	public static void main(String[] args) {
 		
 		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-		String str = "preethi";
+		String str = "greeshma";
 		char[] charArray = str.toCharArray();
 		
 		for (char c : charArray) {

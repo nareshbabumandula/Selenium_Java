@@ -18,6 +18,23 @@ public class HashSetTest {
         s1.add("Seerath");
         s1.add(null);
         s1.add(null);
+        s1.add("Ramya");
+        System.out.println(s1);
+        
+        s2.add("Ravi");
+        s2.add("Venkat");
+        s2.add(null);
+        s2.add(null);
+        s2.add("Ravi");
+        System.out.println(s2);
+        
+        s3.add("Shyam");
+        s3.add("Arun");
+        s3.add("Juweria");
+        //s3.add(null);  // NullPointerException
+        s3.add("Shyam");
+        System.out.println(s3);
+
 
         HashSet<String> set = new HashSet<String>();
         set.add("ravi");
