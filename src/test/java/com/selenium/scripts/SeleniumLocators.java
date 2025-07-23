@@ -65,10 +65,8 @@ public class SeleniumLocators {
 		}
 		
 		driver.navigate().to("https://www.mycontactform.com");
+			
 		
-		
-		
-
 		Thread.sleep(4000);
 		driver.quit();
 	}
