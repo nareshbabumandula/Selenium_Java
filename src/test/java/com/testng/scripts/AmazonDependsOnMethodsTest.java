@@ -1,5 +1,6 @@
 package com.testng.scripts;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -10,7 +11,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class AmazonE2EFlowDependsOnMethodsTest {
+public class AmazonDependsOnMethodsTest {
 	
 	/**
 	 * The annotated method will be run before all tests in this suite have run.
@@ -64,12 +65,20 @@ public class AmazonE2EFlowDependsOnMethodsTest {
 	
 	@Test(dependsOnMethods = {"payment"})
 	void receipt() {
+		Assert.assertEquals(true, true);
 		System.out.println("Order receipt generated..!");
 	}
 	
-	@Test(dependsOnMethods = {"receipt"})
+	// alwaysRun: If set to true, this test method will always be run even if it depends on a method that failed.
+	@Test(dependsOnMethods = {"receipt"}, alwaysRun = true)
 	void cancelOrder() {
 		System.out.println("Successfully cancelled the order..!");
+	}
+	
+	@Test(enabled = true, invocationCount = 4, timeOut = 3000)
+	void navigatetoHomepage() throws InterruptedException {
+		Thread.sleep(2000);
+		System.out.println("Navigated to the homepage..!");
 	}
 	
 	/**
@@ -79,6 +88,7 @@ public class AmazonE2EFlowDependsOnMethodsTest {
 	void refunds() {
 		System.out.println("Generated Refund..!");
 	}
+	
 	
 	/**
 	 * @AfterTest: The annotated method will be run after all the test methods belonging to the classes inside the 

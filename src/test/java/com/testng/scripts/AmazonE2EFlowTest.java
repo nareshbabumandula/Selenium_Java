@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class AmazonE2EFlowTest {
@@ -15,9 +16,10 @@ public class AmazonE2EFlowTest {
 	/**
 	 * The annotated method will be run before all tests in this suite have run.
 	 */
+	@Parameters("url")
 	@BeforeSuite 
-	void launchBrowser() {
-		System.out.println("Launched the browser..!");
+	void accessSite(String url) {
+		System.out.println("Successfully accessed the URL: " + url);
 	}
 	
 	/**
