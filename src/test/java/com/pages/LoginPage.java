@@ -10,13 +10,13 @@ public class LoginPage {
 	WebDriver driver;
 	
 	@FindBy(id="user")
-	public WebElement username;
+	private WebElement username;
 	
 	@FindBy(id="pass")
-	public WebElement password;
+	private WebElement password;
 
 	@FindBy(name="btnSubmit")
-	public WebElement login;
+	private WebElement login;
 	
 	public void verifyLogin(String txtUsername, String txtPassword) {
 		username.sendKeys(txtUsername);
@@ -28,6 +28,5 @@ public class LoginPage {
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
 	}
-	
 	
 }
