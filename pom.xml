@@ -5,8 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   
   <properties>
- 	 <!-- pick one your team actually uses: 21 (LTS) or 24 -->
-  	<maven.compiler.release>11</maven.compiler.release>
+ 	<maven.compiler.release>11</maven.compiler.release>
   </properties>
   
   <dependencies>
