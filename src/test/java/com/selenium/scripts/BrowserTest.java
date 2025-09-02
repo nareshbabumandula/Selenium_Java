@@ -59,6 +59,7 @@ public class BrowserTest {
 		bt.launchBrowser("firefox");
 		bt.accessSite();
 		bt.login();
+	
 	}
 
 }
