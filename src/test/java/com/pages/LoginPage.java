@@ -1,5 +1,6 @@
 package com.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,7 +11,9 @@ public class LoginPage {
 	WebDriver driver;
 	
 	@FindBy(id="user")
-	private WebElement username;
+	private WebElement username; // Page Factory Element
+	
+	public static By userID = By.id("user");  // Page Object Element
 	
 	@FindBy(id="pass")
 	private WebElement password;
@@ -19,7 +22,7 @@ public class LoginPage {
 	private WebElement login;
 	
 	public void verifyLogin(String txtUsername, String txtPassword) {
-		username.sendKeys(txtUsername);
+		username.sendKeys(txtUsername); // Page Factory Implementation
 		password.sendKeys(txtPassword);
 		login.click();
 	}
